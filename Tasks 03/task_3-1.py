@@ -23,7 +23,10 @@ class Color():
         self.g = clamp(g)
         self.b = clamp(b)
         self.luminance()
-        
+
+    def __repr__(self):     # print in hex
+        return "#{0:02x}{1:02x}{2:02x}".format(self.r, self.g, self.b)
+
     def red(self):
         return self.r
 
@@ -33,7 +36,7 @@ class Color():
     def blue(self):
         return self.b
 
-    def cout(self):
+    def text(self):
         return "R=" + str(self.r) + " G=" + str(self.g) + " B=" + str(self.b)
 
     def luminance(self):
@@ -43,16 +46,17 @@ class Color():
     def compare(self, color2):
         return abs(self.luminance() - color2.luminance()) > 128
 
-# Main -------------------------------------------------------
+# Demo -------------------------------------------------------
 
 def main():
     newColor = Color(-100, 128, 300)
     newColor2 = Color(0, 255, 255)
 
     # Output
-    print(newColor.cout())  # строковоe представлениe цвета
+    print(newColor.text())  # строковоe представлениe цвета
     print(newColor.red())   # метод для получения цветового компонента объекта в виде числа
     print(newColor.y)       # метод для вычисления яркости
     print(newColor.compare(newColor2))  # метод для проверки совместимости двух цветов
+    # print(newColor)       # test hex output
 
 main()
