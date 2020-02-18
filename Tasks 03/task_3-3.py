@@ -64,11 +64,8 @@ temp_add = Kelvin(55)
 print("Test print() output: " + str(temp1))
 # print(temp1)
 
-print("\nИстинность температуры:")
-if temp2:
-    print(True)
-else:
-    print(False)
+print("\nИстинность температуры. temp2(14e-7) < 10Е-6 ?: ")
+print(True) if temp2 else print(False)
     
 # print(bool(temp1))
 # print(bool(temp2))
