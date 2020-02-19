@@ -38,6 +38,7 @@ class Color():
 
     def text(self):
         return "R=" + str(self.r) + " G=" + str(self.g) + " B=" + str(self.b)
+        #("R=%d G=%d B=%d" % (self.r, self.g, self.b))
 
     def luminance(self):
         self.y = 0.299 * self.r + 0.587 * self.g + 0.114 * self.b
